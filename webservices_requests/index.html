@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webservices</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button onclick="Clear()" id="clearOutput" style="display: none;">Clear output</button>
     <p id="output"></p>
 
-    <div style="margin:5px;padding:5px;border: 1px solid black;">
+    <div>
         <p>Get all checks</p>
         <button onclick="GetAll()">Run command</button>
     </div>
 
-    <div style="margin:5px;padding:5px;border: 1px solid black;">
+    <div>
         <p>Create new check</p>
         <button onclick="CreateNew()">Run command</button>
     </div>
 
-    <div style="margin:5px;padding:5px;border: 1px solid black;">
+    <div>
         <p>Get check by id</p>
-        <input type="text" name="id_get" id="id_get" style="margin-bottom: 5px;">
+        <input type="text" name="id_get" id="id_get">
         <br>
         <button onclick="GetById()">Run command</button>
     </div>
 
-    <div style="margin:5px;padding:5px;border: 1px solid black;">
+    <div>
         <p>Update check by id</p>
-        <input type="text" name="id_put" id="id_put" style="margin-bottom: 5px;">
+        <input type="text" name="id_put" id="id_put">
         <br>
         <textarea name="id_put_body" id="id_put_body" cols="30" rows="10" spellcheck="false"></textarea>
         <br>
         <button onclick="PutById()">Run command</button>
     </div>
 
-    <div style="margin:5px;padding:5px;border: 1px solid black;">
+    <div>
         <p>Delete check by id</p>
-        <input type="text" name="id_delete" id="id_delete" style="margin-bottom: 5px;">
+        <input type="text" name="id_delete" id="id_delete">
         <br>
         <button onclick="DeleteById()">Run command</button>
     </div>

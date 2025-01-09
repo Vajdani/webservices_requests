@@ -12,22 +12,23 @@ async function GetAll() {
         return response.json();
     }).then((data) => {
         document.getElementById("output").innerHTML = "Output: <pre>" + JSON.stringify(data, null, 2) + "</pre>"
+        document.getElementById("clearOutput").style.display = "block"
     })
 }
 
 async function CreateNew() {
     let body = {
-        'uuid': crypto.randomUUID(),
-        'name': 'sum_is_zero',
-        'version': '0.0.1',
-        'description': 'Checks if the sum of the amounts is equal to zero.',
-        'lang': 'python',
-        'params': [
-            'amount_1: int',
-            'amount_2: int',
-            'amount_3: int'
+        "uuid": crypto.randomUUID(),
+        "name": "sum_is_zero",
+        "version": "0.0.1",
+        "description": "Checks if the sum of the amounts is equal to zero.",
+        "lang": "python",
+        "params": [
+            "amount_1: int",
+            "amount_2: int",
+            "amount_3: int"
         ],
-        'func_body': 'return (amount_1 + amount_2 + amount_3) == 0'
+        "func_body": "return (amount_1 + amount_2 + amount_3) == 0"
     }
 
     await fetch("http://localhost:8080/checks/", {
@@ -53,6 +54,7 @@ async function GetById() {
         return response.json();
     }).then((data) => {
         document.getElementById("output").innerHTML = "Output: <pre>" + JSON.stringify(data, null, 2) + "</pre>"
+        document.getElementById("clearOutput").style.display = "block"
     })
 
     document.getElementById("id_get").value = ""
@@ -80,4 +82,9 @@ async function DeleteById() {
     })
 
     document.getElementById("id_delete").value = ""
+}
+
+function Clear() {
+    document.getElementById("output").innerHTML = ""
+    document.getElementById("clearOutput").style.display = "none"
 }
